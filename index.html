@@ -1,13 +1,241 @@
 <!doctype html>
 <html lang="ko">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gel nail</title>
+    <title>All of Self Gelnail</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+    <link rel="stylesheet" href="https://cdn.isdelivr.net/npm/bootstrap-icon@1.9.1/font/bootstrap-icons.css"> 
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!--네비게이션 시작-->
+   <nav class="navbar navbar-expand-md fixed-top" style="background-color: rgb(252, 252, 248);">
+    <div class="container">
+      <a class="sunflower-font navbar-brand" href="#home">A.O.G</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto my-1">
+          <li class="nav-item"><a class="nav-link" href="#home">홈</a></li>
+          <li class="nav-item"><a class="nav-link" href="#goal">목적</a></li>
+          <li class="nav-item"><a class="nav-link" href="#shape">모양</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tool">도구</a></li>
+          <li class="nav-item"><a class="nav-link" href="#self">셀프네일</a></li>          
+        </ul>
+      </div>
+    </div>
+   </nav>
+<!--네비게이션 끝-->
+
+<!--홈 시작-->
+  <header id="home" class="pt-4 d-flex flex-column justify-content-center align-items-center vh-100">
+    <h1 class="fw-bold pt-5">All of Self Gelnail</h1>
+    <p class="fs-6">셀프 젤네일의 모든 것</p>
+
+<!--이미지 슬라이드-->
+    <div class="slider">
+      <div class="slides">
+          <img src="image/nailart1.jpg" alt="Slide 1">
+          <img src="image/nailart2.jpg" alt="Slide 2">
+          <img src="image/nailart3.jpg" alt="Slide 3">
+      </div>
+      <div class="navigation">
+          <button id="prev">&#10094;</button>
+          <button id="next">&#10095;</button>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    const slideCount = document.querySelectorAll('.slides img').length;
+    let currentIndex = 0;
+
+    document.getElementById('next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slideCount;
+        updateSlidePosition();
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        updateSlidePosition();
+    });
+
+    function updateSlidePosition() {
+        const slideWidth = slides.querySelector('img').clientWidth;
+        slides.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+    }
+</script>
+<!--이미지 슬라이드 끝-->
+<!--홈 끝-->
+
+<!--목적 섹션 시작-->
+   <section class="d-flex vh-100" id="goal">
+
+    <div class="p-2 w-50 text-center">
+      <h2 class="fw-bold">미용</h3>
+      <p class="fs-4">밋밋해 보일 수 있는 맨손톱을 꾸미는 목적</p>
+      <p class="fs-8">셀프네일, 샵 원하는 것 선택 가능</p>
+      <img src="image/nailart5.jpg" alt="" width="250" height="300">
+    </div>
+
+    <div class="p-2 w-50 text-center">
+      <h2 class="fw-bold">교정</h3>
+      <p class="fs-4">깨지고 떨어지는 등 변형이 온 손톱을 교정하는 목적</p>
+      <p class="fs-8">샵의 전문가에게 상담받는 것을 추천</p>
+      <img src="image/crack.jpg" alt="" width="250" height="300">
+    </div>
+
+   </section>
+<!--목적 섹션 끝-->
+
+<!--모양 섹션 시작-->
+   <section class="py-5" id="shape">
+
+    <div class="container overflow-hidden">
+      <div class="text-center py-5">
+        <h2 class="fw-bold">네일 모양</h2>
+      </div>
+
+      <div class="row pb-5 g-3">
+        <div class="col-sm-6 col-lg-2">
+          <img src="image/almond.jpg" alt="" class="nail-shape">
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <img src="image/arrowhead.jpg" alt="" class="nail-shape">
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <img src="image/ballerina.jpg" alt="" class="nail-shape">
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <img src="image/edge.jpg" alt="" class="nail-shape">
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <img src="image/flare.jpg" alt="" class="nail-shape">
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <img src="image/lipstick.jpg" alt="" class="nail-shape">
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <img src="image/mountainpeak.jpg" alt="" class="nail-shape">
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <img src="image/oval.jpg" alt="" class="nail-shape">
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <img src="image/rounded.jpg" alt="" class="nail-shape">
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <img src="image/square.jpg" alt="" class="nail-shape">
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <img src="image/squaredoval.jpg" alt="" class="nail-shape">
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <img src="image/stiletto.jpg" alt="" class="nail-shape">
+        </div>
+      </div>
+    </div>
+
+   </section>  
+<!--모양 섹션 끝-->
+
+<!--도구 섹션 시작-->
+    <section class="vh-100 d-flex flex-column justify-content-center align-items-center" id="tool">
+
+      <div class="button-container py-5">
+      <a href="care.html" class="tool-button btn btn-dark rounded-pill px-4 py-3 fs-2">케어 도구</a>
+      <a href="procedure.html" class="tool-button btn btn-dark rounded-pill px-4 py-3 fs-2">시술 도구</a>
+      <a href="remove.html" class="tool-button btn btn-dark rounded-pill px-4 py-3 fs-2">제거 도구</a>
+      </div>
+
+    </section>
+<!--도구 섹션 끝-->
+
+<!--셀프네일 섹션 시작-->
+    <section class="py-5" id="self">
+      <div class="text-center">
+      <h2 class="fw-bold pt-5">셀프 네일</h2>
+<!--모달 시작-->
+      <button type="button" data-bs-toggle="modal" data-bs-target="#preparationModal"
+                   class="btn btn-danger rounded-pill">준비사항</button>
+        <div class="modal fade" id="preparationModal" tabindex="-1" aria-labelledby="preparationModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title text-white" id="preparationModalLabel">준비 사항</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+              </div>
+              <div class="modal-body">
+                <h2>공통 준비 사항</h2>
+                <p>
+                  큐티클 펜 리무버와 니퍼를 이용해 큐티클을 깔끔히 정리한다.<br>
+                  그 후 네일 파일을 이용해 울퉁불퉁한 손톱을 천천히 갈아 표면에 젤이 고르게 발릴 수 있도록 정리한다.<br>
+                  이때, 손톱을 강하게 갈면 손톱이 얇아져 고통이 느낄 수 있으므로 주의해야 한다.<br>
+                  손톱가루와 큐티클 리무버의 오일로 지저분한 손톱을 알콜 스왑으로 깨끗하게 닦아낸다.<br>
+                  손톱을 보호하기 위해 베이스젤 도포 후 젤램프에 굽고 젤클리너로 미경화젤을 닦아내 셀프 네일 준비를 마친다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <button type="button" data-bs-toggle="modal" data-bs-target="#warningModal"
+                   class="btn btn-danger rounded-pill">주의사항</button>
+        <div class="modal fade" id="warningModal" tabindex="-1" aria-labelledby="warnigModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title text-white" id="warnigModalLabel">준비 사항</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  젤과 손톱 사이에 틈이 생겨 물이나 이물질이 들어가면 곰팡이가 생겨 병을 유발할 수 있으니 틈이 생기지 않게 젤을 꼼꼼히 발라야 한다.<br>
+                  네일 제거 시 순서대로 진행하지 않거나 전용 리무버를 사용하지 않을 시 손톱에 많은 무리가 생겨 손톱이 종잇장처럼 얇아져 쉽게 찢어지거나 손톱과 살 사이가 과하게 벌어져 네일 바디가 짧아질 수 있으니 주의해야 한다.<br>
+                  젤램프에 구울 때 손톱이 뜨거워짐을 느낌에도 램프에서 손을 빼지 않으면 손톱 화상을 입을 수 있으니 열감이 느껴지면 반드시 식혀주고 다시 구워야 한다.
+                </p>
+                <img src="image/nailburn.jpg" alt="화상" class="modalimage">
+              </div>
+            </div>
+          </div>
+        </div>              
+<!--모달 끝-->
+      </div>
+
+      <div class="row py-4">
+          <div class="col-md-4 text-center">
+              <a href="halfgel.html">
+                  <img src="image/halfgel.jpg" alt="반경화젤" class="self-nail">
+              </a>
+              <p>반경화젤</p>
+          </div>
+              <div class="col-md-4 text-center">
+              <a href="nailtip.html">
+                  <img src="image/nailtip.jpg" alt="네일팁" class="self-nail">
+              </a>
+              <p>네일팁</p>
+          </div>
+          <div class="col-md-4 text-center">
+              <a href="selfnail.html">
+                  <img src="image/nailart4.jpg" alt="셀프네일" class="self-nail">
+              </a>
+              <p>셀프네일</p>
+          </div>
+      </div>
+      
+     </section>
+<!--셀프네일 섹션 끝-->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
 </html>
